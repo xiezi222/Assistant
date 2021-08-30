@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import tkinter
-import view
+import mainPage
 
 
 class Window:
@@ -29,4 +29,5 @@ class Window:
         pass
 
     def create_main_view(self, window):
-        tkinter.Frame(master=window, bg="pink").pack(expand=True, fill=tkinter.BOTH)
+        self.root_view = mainPage.MainPage(window)
+        self.root_view.pack(expand=True, fill=tkinter.BOTH)

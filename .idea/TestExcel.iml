@@ -5,9 +5,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/classes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/module" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/xlsx" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/classes/UI" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/classes/script" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.9" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

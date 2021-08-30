@@ -46,7 +46,7 @@ def start():
     app = xw.App(visible=False, add_book=False)
     app.display_alerts = False
     app.screen_updating = False
-    file_path = "../xlsx/工作簿1.xlsx"
+    file_path = "../../xlsx/工作簿1.xlsx"
     book = xw.Book(file_path)
     for sheet in book.sheets:
         delete_merged_rows(sheet)
