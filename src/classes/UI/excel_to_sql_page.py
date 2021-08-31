@@ -4,6 +4,7 @@
 import tkinter
 from tkinter import *
 from tkinter import filedialog
+from excel_to_sql_script import ExcelToSql
 
 
 class ExcelToSqlPage(Frame):
@@ -41,5 +42,5 @@ class ExcelToSqlPage(Frame):
         self.sql_path.insert(0, path)
 
     def merge_action(self):
-        path = self.sql_path.get()
-        print(path)
+        script = ExcelToSql(self.excel_path.get(), self.sql_path.get())
+        script.run()
