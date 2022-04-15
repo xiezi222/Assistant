@@ -18,7 +18,7 @@ out_path = os.path.join(os.getcwd(), "../xlsx/转置.xlsx")
 
 title_map = {}
 
-def log_eror(str):
+def log_error(str):
     print("\033[0;37;41m警告:"+ str + "\033[0m")
 
 
@@ -41,7 +41,7 @@ def transform(source_sheet, target_sheet):
         for cell in row:
             value = cell.value
             if value == None:
-                log_eror(str.format("没有列名， 位置：{:s}:{:d}".format(cell.column_letter,cell.row)))
+                log_error(str.format("没有列名， 位置：{:s}:{:d}".format(cell.column_letter,cell.row)))
                 continue
 
             letter = ""
@@ -62,11 +62,11 @@ def start():
 
     workbook = load_workbook(in_path)
     for sheet in workbook:
-        sheetname = sheet.title
-        print(sheetname)
-        target_sheet = new_workbook.create_sheet(title=sheetname)
-        transform(workbook[sheetname], target_sheet)
-        print("sheet 转置完成:",sheetname)
+        sheet_name = sheet.title
+        print(sheet_name)
+        target_sheet = new_workbook.create_sheet(title=sheet_name)
+        transform(workbook[sheet_name], target_sheet)
+        print("sheet 转置完成:",sheet_name)
     workbook.close()
     new_workbook.save(out_path)
     new_workbook.close()

@@ -4,7 +4,7 @@
 # 按 双击 ⇧ 在所有地方搜索类、文件、工具窗口、操作和设置。
 
 
-from UI.window import Window
+from src.classes.UI.window import Window
 
 if __name__ == '__main__':
     Window()

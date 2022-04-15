@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-import tkinter
+try:
+    from Tkinter import Tk
+except ImportError:
+    from tkinter import Tk
 from main_page import MainPage
 
 
@@ -11,7 +14,7 @@ class Window:
         self.init_window()
 
     def init_window(self):
-        window = tkinter.Tk()
+        window = Tk()
         self.setup_window(window)
         self.create_main_view(window)
         window.mainloop()
@@ -23,9 +26,8 @@ class Window:
         left = int(window.winfo_screenwidth() / 2 - width / 2)
         top = int(window.winfo_screenheight() / 2 - height / 2)
         window.geometry(f"{width}x{height}+{left}+{top}")
-        window.config(bg="blue")
 
     def create_main_view(self, window):
         window.columnconfigure(0, weight=1)
         window.rowconfigure(0, weight=1)
-        MainPage(window).grid(sticky=tkinter.NSEW)
+        MainPage(window).grid(sticky='nsew')
