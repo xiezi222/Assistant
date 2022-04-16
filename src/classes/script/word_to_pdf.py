@@ -2,8 +2,9 @@
 # -*- coding: UTF-8 -*-
 
 import os
-from base_script import BaseScript
-# from win32com.client import constants, gencache
+from src.classes.script.base_script import BaseScript
+from win32com.client import constants, gencache
+from src.classes.UI.common import alert
 
 class WordToPDF(BaseScript):
 
@@ -24,8 +25,9 @@ class WordToPDF(BaseScript):
     def executive(self):
         self.remove_old_out_file()
 
-        # word = gencache.EnsureDispatch('Word.Application')
-        # doc = word.Documents.Open(self.word_path, ReadOnly=1)
-        # # 转换方法
-        # doc.ExportAsFixedFormat(self.out_path, constants.wdExportFormatPDF)
-        # word.Quit()
+        word = gencache.EnsureDispatch('Word.Application')
+        doc = word.Documents.Open(self.word_path, ReadOnly=1)
+        # 转换方法
+        doc.ExportAsFixedFormat(self.out_path, constants.wdExportFormatPDF)
+        word.Quit()
+        alert("ok")

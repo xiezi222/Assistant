@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import os
-from base_script import BaseScript
+from src.classes.script.base_script import BaseScript
 from openpyxl import Workbook, load_workbook
 
 

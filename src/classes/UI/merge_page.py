@@ -1,11 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-try:
-    from Tkinter import Frame, Entry, Button, Label, filedialog
-except ImportError:
-    from tkinter import Frame, Entry, Button, Label, filedialog
-
+from tkinter import Frame, Entry, Button, Label, filedialog
 
 class MergePage(Frame):
 
@@ -20,7 +16,7 @@ class MergePage(Frame):
         self.columnconfigure(1, minsize=60)
 
         Label(self, text="待合并的excel所在文件夹").grid(row=0, column=0, pady=10, sticky='w')
-        self.path.grid(row=1, column=0, sticky='ew')
+        self.path.grid(row=1, column=0, padx=(0, 10), sticky='ew')
         Button(self, text="选择", command=self.get_path).grid(row=1, column=1, sticky='w')
         Button(self, text="合并", command=self.merge_action, width=10).grid(row=2, columnspan=2, pady=20)
 

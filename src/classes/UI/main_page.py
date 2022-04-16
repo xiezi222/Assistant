@@ -1,15 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-try:
-    from Tkinter import Frame, Button
-    from Tkinter.ttk import Separator
-except ImportError:
-    from tkinter import Frame, Button
-    from tkinter.ttk import Separator
-from merge_page import MergePage
-from excel_to_sql_page import ExcelToSqlPage
-from word_to_pdf_page import WordToPDFPage
+from tkinter import Frame, Button
+from tkinter.ttk import Separator
+from src.classes.UI.merge_page import MergePage
+from src.classes.UI.excel_to_sql_page import ExcelToSqlPage
+from src.classes.UI.word_to_pdf_page import WordToPDFPage
 
 
 class MainPage(Frame):
@@ -20,7 +16,7 @@ class MainPage(Frame):
         self.add_subviews()
 
     def add_subviews(self):
-        self.columnconfigure(0, minsize=120)
+        self.columnconfigure(0, minsize=150)
         self.columnconfigure(2, weight=1)
         self.rowconfigure(0, weight=1)
 
@@ -31,11 +27,11 @@ class MainPage(Frame):
         self.contentView = Frame(self)
         self.contentView.grid(row=0, column=2, sticky='nsew')
 
-        Button(list_view, text="合并excel文件", command=self.merge_action).pack(pady=10)
-        Button(list_view, text="提取列名首字母", command=self.pinyin_action).pack(pady=10)
-        Button(list_view, text="excel转sql", command=self.transform_action).pack(pady=10)
-        Button(list_view, text="word_to_pdf", command=self.word_to_pdf_action).pack(pady=10)
-        self.merge_action()
+        # Button(list_view, text="合并excel文件", command=self.merge_action).pack(pady=10)
+        # Button(list_view, text="提取列名首字母", command=self.pinyin_action).pack(pady=10)
+        # Button(list_view, text="excel转sql", command=self.transform_action).pack(pady=10)
+        Button(list_view, text="word转pdf", command=self.word_to_pdf_action).pack(pady=10)
+        self.word_to_pdf_action()
 
     def merge_action(self):
         pages = self.contentView.pack_slaves()
